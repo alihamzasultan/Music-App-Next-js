@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
+
+
 import {
   motion,
   AnimatePresence,
@@ -30,9 +32,9 @@ export const FloatingNav = ({
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
+ 
+      if (direction < 0) {
+        setVisible(true);
       } else {
         if (direction < 0) {
           setVisible(true);
