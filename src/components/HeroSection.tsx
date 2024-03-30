@@ -2,6 +2,9 @@ import Link from "next/link"; // a tags hame
 import { Spotlight } from "./ui/Spotlight";
 import { Button } from "./ui/moving-border";
 
+
+
+
 const HeroSection = () => {
   return (
     <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-
@@ -13,6 +16,7 @@ const HeroSection = () => {
         fill="blue"
       />
        <div className="p-4 relative z-10 w-full text-center">
+        
 
 <h1 className="mt-200 md:my-0 text-4xl md:text-7xl
        font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
@@ -43,8 +47,11 @@ const HeroSection = () => {
        </div>
 
         
-        </div> // mx max width
+        </div> 
+        
+        // mx max width
   )
 }
+
 
 export default HeroSection
