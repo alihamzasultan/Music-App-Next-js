@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+
 import {
   motion,
   AnimatePresence,
@@ -11,54 +12,38 @@ import { cn } from "@/utils/cn";
 import Link from "next/link";
 
 export const FloatingNav = ({
+  navItems,
   className,
 }: {
   navItems: {
     name: string;
     link: string;
-    
+    icon?: JSX.Element;
   }[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+
       if (scrollYProgress.get() < 0.05) {
-        setVisible(true); // Always show when at top
+        setVisible(false);
       } else {
-        const direction = current - scrollYProgress.getPrevious()!;
-        setVisible(direction < 0); // Show when scrolling up, hide when scrolling down
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
       }
     }
   });
-  const navItems = [
-    {
-      name: "Home",
-      link: "/",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "About",
-      link: "/about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-      icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
-    },
-  ];
-  
-  
 
   return (
-    
     <AnimatePresence mode="wait">
       <motion.div
         initial={{
@@ -77,7 +62,7 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems?.map((navItem: any, idx: number) => (
+        {navItems.map((navItem: any, idx: number) => (
           <Link
             key={`link=${idx}`}
             href={navItem.link}

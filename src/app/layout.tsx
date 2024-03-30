@@ -4,6 +4,11 @@ import "./globals.css";
 
 import { FloatingNav } from "@/components/nava";
 
+const navItems = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Contact', link: '/contact' },
+];
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <div className="relative w-full flex items-center justify-center">
-        < FloatingNav />
+        <FloatingNav navItems={navItems} />
         
         </div>
         
