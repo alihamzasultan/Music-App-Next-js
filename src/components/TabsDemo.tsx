@@ -14,11 +14,14 @@ export function TabsDemo() {
       title: "Innovation",
       value: "Innovation",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Product Tab</p>
-          <DummyContent image="/courses/blues.jpg" />
-
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-700 to-blue-900">
+        <div className="flex items-center justify-between">
+          <p className="mr-4">Product Tab</p>
+          <button className="px-6 py-3 bg-white text-gray-700 rounded-md shadow-md hover:bg-purple-100 hover:text-blue-800 transition duration-300 ">Get Now</button>
         </div>
+        <p className="pt-10 pb-10">Discover innovative solutions to complex problems and unlock new possibilities for your business.</p>
+          <DummyContent image="/courses/blues.jpg" />
+      </div>
       ),
       image: "/innovation.jpg",
     },
@@ -84,7 +87,7 @@ const DummyContent = ({ image }: { image: string }) => {
       alt="dummy image"
       width="1000"
       height="1000"
-      className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      className="object-cover h-48 w-100 rounded-xl mx-auto"
     />
   );
 };

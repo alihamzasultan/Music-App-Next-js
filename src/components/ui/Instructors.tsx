@@ -1,6 +1,8 @@
 'use client'
 import { AnimatedTooltip } from "./animated-tooltip";
-import { WavyBackground } from "./wavy-background"
+import { WavyBackground } from "./wavy-background";
+import { AnimatePresence, motion } from "framer-motion";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 
 const instructors = [
     {
@@ -50,5 +52,7 @@ text-white font-bold text-center mb-8"> Meet Our Instructors</h2>
      </div>
   )
 }
+
+
 
 export default Instructors
