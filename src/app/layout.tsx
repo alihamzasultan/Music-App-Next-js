@@ -6,9 +6,23 @@ import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { FloatingNav } from "@/components/nava";
 
 const navItems = [
-  { name: 'Home', link: '/' },
-  { name: 'AboutUS', link: '/aboutUs' },
-  { name: 'Contact', link: '/contact' },
+  {
+    name: "Home",
+    link: "/",
+    icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "AboutUs",
+    link: "/aboutUs",
+    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+    icon: (
+      <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+    ),
+  },
 ];
 
 const inter = Inter({ subsets: ["latin"] });
