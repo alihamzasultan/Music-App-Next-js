@@ -7,7 +7,7 @@ import { FloatingNav } from "@/components/nava";
 
 const navItems = [
   { name: 'Home', link: '/' },
-  { name: 'About', link: '/about' },
+  { name: 'AboutUS', link: '/aboutUs' },
   { name: 'Contact', link: '/contact' },
 ];
 

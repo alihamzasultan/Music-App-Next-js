@@ -1,6 +1,7 @@
 
 import FeaturedCourses from "@/components/FeaturedCourses";
 import Footer from "@/components/Footer";
+
 import HeroSection from "@/components/HeroSection";
 import { TabsDemo } from "@/components/TabsDemo";
 import MusicTestimonialCards from "@/components/TestimonialCards";
@@ -21,6 +22,7 @@ export default function Home() {
       <HeroSection/>
       <TabsDemo/>
       <FeaturedCourses/> 
+
       <MusicTestimonialCards />
       <UpcomingWebinars />
       <Footer/>
